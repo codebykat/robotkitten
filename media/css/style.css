@@ -1,0 +1,48 @@
+body {
+  background: url("/images/notebook.gif");
+}
+
+a {
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+div.content {
+  font-family: monospace;
+  background-color: #fff;
+  width: 750px;
+  border: 1px lightblue solid;
+  padding: 25px;
+  margin: 25px auto;
+}
+
+div#top {
+  text-align: center;
+  margin-top: 0;
+}
+
+div.comic {
+  text-align: center;
+  font-family: monospace;
+}
+
+div.comic img {
+  border: 1px black solid;
+}
+
+div#nav, div#title {
+  text-align: center;
+  margin: 5px auto;
+  padding: 10px 25px 10px 25px;
+}
+
+div#news {
+  padding: 10px 25px 10px 25px;
+}
+
+div#bottom {
+  text-align: center;
+}
