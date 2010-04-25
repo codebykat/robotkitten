@@ -18,6 +18,8 @@ feeds = {
 urlpatterns = patterns('',
     # Example:
     # (r'^robotkitten/', include('robotkitten.foo.urls')),
+    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to',
+                         {'url': '/images/favicon.ico'}),
     (r'^css/(?P<path>.*)$', 'django.views.static.serve',
                               {'document_root': css_root}),
     (r'^images/(?P<path>.*)$', 'django.views.static.serve',
