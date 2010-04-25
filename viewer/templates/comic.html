@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content" id="title">
+  <h3>{{comic.id}}: {{comic.title}}</h3>
+  <small>{{comic.date|date:"m/d/Y"}}</small>
+</div>
+
+<div class="comic">
+  <img src="{{comic.url}}" title="{{comic.alt}}" /><br />
+</div>
+
+<div class="content" id="nav">
+  <a href="/001">first</a>
+
+  {% if comic.prev %}
+    <a href="{{comic.prev}}">prev</a>
+  {% endif %}
+  <a href="/random">random</a>
+
+  {% if comic.next %}
+    <a href="{{comic.next}}">next</a>
+  {% endif %}
+  <a href="/">last</a>
+  <br/>
+  <a href="/list">archive</a>
+</div>
+
+{% if comic.news %}
+<div class="content" id="news">
+  {{comic.news|safe}}
+</div>
+{% endif %}
+
+{% endblock %}
