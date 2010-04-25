@@ -24,6 +24,13 @@ div#top {
   margin-top: 0;
 }
 
+div#top h2 {
+  margin: 0px auto;
+  font-family: monospace;
+}
+
+h3 { margin: 0px auto; }
+
 div.comic {
   text-align: center;
   font-family: monospace;

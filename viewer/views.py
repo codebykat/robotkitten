@@ -54,7 +54,7 @@ def comic(request, comic_id=""):
   except:
     pass
 
-  return render_to_response('index.html', {'comic':com})
+  return render_to_response('comic.html', {'comic':com})
 
 def random(request):
   tempcomics = os.listdir(comic_root)
