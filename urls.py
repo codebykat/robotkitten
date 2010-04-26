@@ -12,7 +12,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 feeds = {
-  'latest': LatestComics, 
+  'latest': FeedLatest, 
+  'summary': FeedSummary,
 }
 
 urlpatterns = patterns('',
