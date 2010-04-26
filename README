@@ -1,5 +1,3 @@
-robotkitten is a Django site that hosts a webcomic from the filesystem,
-including title text, news posts and RSS feeds.
+robotkitten is a Django site that hosts a webcomic from the filesystem, including title text, news posts and RSS feeds.
 
-Though it has no database models, you will still need to create and sync
-a database so that the Django feed framework works.
+Though it has no database models, you will still need to create and sync a database so that the Django feed framework works.
