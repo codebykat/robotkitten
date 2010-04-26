@@ -1,2 +1,5 @@
-<img src="http://robotkitten.net/comics/{{obj.path}}" title="{{obj.alt}}"/><br />
-{{obj.news|safe}}
+<img src="http://robotkitten.net/comics/{{obj.path}}" title="{{obj.alt}}"/>
+{% if obj.news %}
+  <br />
+  {{obj.news|safe}}
+{% endif %}
