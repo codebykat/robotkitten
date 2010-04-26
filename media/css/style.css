@@ -49,6 +49,14 @@ div#top h2 {
   font-family: monospace;
 }
 
+div#top a {
+  color: #000;
+}
+
+div#top a:hover {
+  text-decoration: none;
+}
+
 h3 { margin: 0px auto; }
 
 div.comic {
