@@ -12,7 +12,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 feeds = {
-  'latest': FeedLatest, 
+  'latest': ComicFeed, 
   'summary': FeedSummary,
 }
 
