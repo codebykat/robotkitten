@@ -46,6 +46,5 @@ class ComicFeed(Feed):
 
 class FeedSummary(ComicFeed):
   description = "robot+kitten (summary feed)"
-
+  # description_template = "feeds/summary_description.html"
   title_template = "feeds/latest_title.html"
-  description_template = "feeds/summary.html"
