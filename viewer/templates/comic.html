@@ -12,23 +12,29 @@
 </div>
 
 <div class="content" id="nav">
-  <a href="/001">first</a>
+  <div class="left"></div>
 
-  {% if comic.prev %}
-    <a href="{{comic.prev}}">prev</a>
-  {% endif %}
-  <a href="/random">random</a>
+  <div class="middle">
+    <a href="/001">first</a>
 
-  {% if comic.next %}
-    <a href="{{comic.next}}">next</a>
-  {% endif %}
-  <a href="/">last</a>
-  <br/>
-  <a href="/list">archive</a> *
-  <a href="mailto:kat@robotkitten.net">contact</a> *
+    {% if comic.prev %}
+      <a href="{{comic.prev}}">prev</a>
+    {% endif %}
+    <a href="/random">random</a>
 
-  <a href="/feeds/latest/"><img src="images/feed-icon-14x14.png"/>RSS 
-feed</a>
+    {% if comic.next %}
+      <a href="{{comic.next}}">next</a>
+    {% endif %}
+    <a href="/">last</a>
+    <br/>
+    <a href="/list">archive</a>
+    <a href="mailto:kat@robotkitten.net">contact</a>
+</div>
+
+<div class="rss right">
+  <a href="/feeds/latest/"><img src="images/feed-icon-14x14.png" title="rss feed"/>rss</a>
+</div>
+
 </div>
 
 {% if comic.news %}

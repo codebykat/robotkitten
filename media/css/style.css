@@ -27,19 +27,19 @@ div#top {
   height: 60px;
 }
 
-div.top-left {
+div.left {
   width: 10%;
   float: left;
 }
 
-div.top-middle {
+div.middle {
   width: 80%;
   margin: 0 auto;
   position: absolute;
   left: 10%;
 }
 
-div.top-right {
+div.right {
   width: 10%;
   float: right;
 }
@@ -74,10 +74,24 @@ div#nav, div#title {
   padding: 10px 25px 10px 25px;
 }
 
+div#nav {
+  position: relative;
+  height: 30px;
+}
+
 div#news {
   padding: 10px 25px 10px 25px;
 }
 
 div#bottom {
   text-align: center;
+}
+
+div.rss {
+  text-align: right;
+}
+
+div.rss img {
+  vertical-align: middle;
+  border: 0;
 }
