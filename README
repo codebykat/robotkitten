@@ -1,3 +1,16 @@
 robotkitten is a Django site that hosts a webcomic from the filesystem, including title text, news posts and RSS feeds.
 
+Comics to be displayed are stored in subdirectories of a directory called "comics", one per directory.  Each comic folder contains an image file (jpg, gif or png), as well as optional alt.txt (text to be displayed as the images "title" parameter) and news.txt (text to be displayed beneath the comic).
+
+The directory name is used to sort the comics, and is displayed as part of the title.
+
+An example:
+  comics/001/comic.jpg
+  comics/001/alt.txt
+  comics/001/news.txt
+
+This example will display as "001: comic".
+
+The date displayed with each comic is the last modified time of that image file, as reported by the filesystem.  This works well on Linux, but has not been tested on Windows systems.
+
 Though it has no database models, you will still need to create and sync a database so that the Django feed framework works.
