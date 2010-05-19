@@ -28,20 +28,27 @@ div#top {
 }
 
 div.left {
-  width: 10%;
+  width: 15%;
   float: left;
 }
 
 div.middle {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   position: absolute;
-  left: 10%;
+  left: 15%;
 }
 
 div.right {
-  width: 10%;
+  width: 15%;
   float: right;
+}
+
+div.left img {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph; /*IE*/
 }
 
 div#top h2 {
