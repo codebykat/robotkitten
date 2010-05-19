@@ -22,25 +22,27 @@ div.content {
 div#top {
   text-align: center;
   margin: 0 auto;
-  padding: 3px 25px 3px 25px;
+  padding: 3px 0 3px 0;
   position: relative;
   height: 60px;
+  width: 800px;
 }
 
 div.left {
-  width: 15%;
+  width: 115px;
+  height: 60px;
   float: left;
 }
 
 div.middle {
-  width: 70%;
-  margin: 0 auto;
+  width: 80%;
   position: absolute;
-  left: 15%;
+  left: 10%;
 }
 
 div.right {
-  width: 15%;
+  width: 115px;
+  height: 60px;
   float: right;
 }
 
