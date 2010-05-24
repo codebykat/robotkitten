@@ -25,16 +25,21 @@ def comic(request, comic_id=""):
   try:
     file = glob.glob('%s/*.[pjg][npi][gf]' % comic_id)
     com['url'] = "/comics/%s" % file[0]
-    date = os.path.getmtime(file[0])
-    com['date'] = datetime.datetime.fromtimestamp(date)
   except:
     raise Http404
 
   com['id'] = comic_id
   com['title'] = com['url'][12:-4]
 
+  try:
+    date = open("%s/date.txt" % comic_id).read().strip()
+    com['date'] = datetime.datetime.strptime(date, "%Y-%m-%d")
+  except:
+    date = os.path.getmtime(file[0])
+    com['date'] = datetime.datetime.fromtimestamp(date)
+
   #comic = Comic.objects.get(id=comic_id)
-  try: com['alt'] = open("%s/alt.txt" % comic_id).read()
+  try: com['alt'] = open("%s/alt.txt" % comic_id).read().strip()
   except: pass
 
   try: com['news'] = open("%s/news.txt" % comic_id).read()
