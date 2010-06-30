@@ -80,7 +80,7 @@ def random(request):
 def list(request):
   os.chdir(comic_root)
   tempcomics = os.listdir(comic_root)
-  tempcomics.sort()
+  tempcomics.sort(reverse=True)
   comics=[]
 
   for comic in tempcomics:
