@@ -1,6 +1,6 @@
-robotkitten is a Django site that hosts a webcomic from the filesystem, including title text, news posts and RSS feeds.
+robotkitten is a Flask app that hosts a webcomic from the filesystem, including title text and news posts.
 
-Comics to be displayed are stored in subdirectories of a directory called "comics", one per directory.  Each comic folder contains an image file (jpg, gif or png), as well as optional alt.txt (text to be displayed as the images "title" parameter) and news.txt (text to be displayed beneath the comic).
+Comics to be displayed are stored in subdirectories of the static directory called "comics", one per directory.  Each comic folder contains an image file (jpg, gif or png), as well as optional alt.txt (text to be displayed as the images "title" parameter) and news.txt (text to be displayed beneath the comic).
 
 The directory name is used to sort the comics, and is displayed as part of the title.
 
@@ -11,6 +11,9 @@ An example:
 
 This example will display as "001: comic".
 
-The date displayed with each comic is the last modified time of that image file, as reported by the filesystem.  This works well on Linux, but has not been tested on Windows systems.
+The date displayed with each comic is the last modified time of that image file, as reported by the filesystem.  This works well on Linux, but has not been tested on Windows systems. Optionally, you can override this with a file called "date.txt", with a date in the format "YYYY-MM-DD".
 
-Though it has no database models, you will still need to create and sync a database so that the Django feed framework works.
+
+CHANGELOG
+
+Converted from Django to Flask. Still to do: RSS feeds.

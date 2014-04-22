@@ -1,0 +1,107 @@
+body {
+  background: url("/images/notebook.gif");
+}
+
+a {
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+div.content {
+  font-family: monospace;
+  background-color: #fff;
+  width: 750px;
+  border: 1px lightblue solid;
+  padding: 25px;
+  margin: 25px auto;
+}
+
+div#top {
+  text-align: center;
+  margin: 0 auto;
+  padding: 3px 0 3px 0;
+  position: relative;
+  height: 60px;
+  width: 800px;
+}
+
+div.left {
+  width: 115px;
+  height: 60px;
+  float: left;
+}
+
+div.middle {
+  width: 80%;
+  position: absolute;
+  left: 10%;
+}
+
+div.right {
+  width: 115px;
+  height: 60px;
+  float: right;
+}
+
+div.left img {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph; /*IE*/
+}
+
+div#top h2 {
+  margin: 0px auto;
+  padding-bottom: 10px;
+  font-family: monospace;
+}
+
+div#top a {
+  color: #000;
+}
+
+div#top a:hover {
+  text-decoration: none;
+}
+
+h3 { margin: 0px auto; }
+
+div.comic {
+  text-align: center;
+  font-family: monospace;
+}
+
+div.comic img {
+  border: 1px black solid;
+}
+
+div#nav, div#title {
+  text-align: center;
+  margin: 5px auto;
+  padding: 10px 25px 10px 25px;
+}
+
+div#nav {
+  position: relative;
+  height: 30px;
+}
+
+div#news {
+  padding: 10px 25px 10px 25px;
+}
+
+div#bottom {
+  text-align: center;
+}
+
+div.rss {
+  text-align: right;
+}
+
+div.rss img {
+  vertical-align: middle;
+  border: 0;
+}
