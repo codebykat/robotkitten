@@ -3,6 +3,7 @@ app = Flask(__name__, static_url_path='' )
 app.debug = True
 
 import os, glob, random as rand, datetime
+import urllib, unicodedata
 
 comic_root = os.path.join(os.path.dirname( __file__ ), "static/comics" )
 comic_root = os.path.normpath( comic_root )
@@ -27,14 +28,21 @@ def comic( comic_id ):
 
 	try:
 		file = glob.glob( '%s/%s/*.[pjg][npi][gf]' % ( comic_root, comic_id ) )
-		com['url'] = unicode(file[0][6:], "utf8")
-		# com['url'] = url_for( 'static', filename=com['url'] )
+		head, tail = os.path.split( file[0] )
+
+		# no, i don't understand it either. :[
+		# https://stackoverflow.com/questions/9757843/unicode-encoding-for-filesystem-in-mac-os-x-not-correct-in-python
+		tail = unicodedata.normalize('NFC', unicode(tail, 'utf-8')).encode('utf-8')
+
+		# using url_for screws up the encoding again somehow (double-encodes it?)
+		com['url'] = url_for( 'static', filename='/comics/' + comic_id + '/' + tail )
+		com['url'] = urllib.unquote(com['url'])
 
 	except:
 		abort( 404 )
 
 	com['id'] = comic_id
-	com['title'] = unicode(file[0][18:-4], "utf8")
+	com['title'] = tail[:-4].decode('utf-8')
 
 	try:
 		date = open( "%s/%s/date.txt" % ( comic_root, comic_id ) ).read().strip()
@@ -90,8 +98,8 @@ def list():
 		try:
 			file = glob.glob( '%s/%s/*.[pjg][npi][gf]' % ( comic_root, comic ) )[0]
 			title = "%s: %s" % ( comic, file[len(comic_root)+5:-4] )
-			title = unicode(title, "utf8")
-			comics.append( {'url':unicode(comic, "utf8"), 'title':title} )
+			title = title.decode('utf-8')
+			comics.append( {'url':comic.decode('utf-8'), 'title':title} )
 		except:
 			pass
 
